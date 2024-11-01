@@ -25,7 +25,7 @@
 
 
   <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="static/images/aeromamba.svg">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -52,50 +52,23 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">AEROMamba: An efficient architecture for audio super-resolution using generative adversarial networks and state space models</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="wallace.abreu@smt.ufrj.br" target="_blank">Wallace Abreu</a>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
+                  <a href="wagner@smt.ufrj.br" target="_blank">Luiz W. P. Biscainho</a></span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">Federal University of Rio de Janeiro, Brazil <br>LAMIR Workshop 2024</span>
                   </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/aeromamba-super-resolution/aeromamba" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -104,14 +77,6 @@
                   </a>
                 </span>
 
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
                 </a>
               </span>
             </div>
@@ -123,22 +88,6 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -148,7 +97,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Audio super-resolution aims to enhance low-resolution signals by creating high-frequency content. In this work, we modify the architecture of AERO (a state-of-the-art system for this task) for music super-resolution. SPecifically, we replace its original Attention and LSTM layers with Mamba, a State Space Model (SSM), across all network layers. Mamba is capable of effectively substituting the mentioned modules, as it offers a mechanism similar to that of Attention while also functioning as a recurrent network. With the proposed AEROMamba, training requires 2-4x less GPU memory, since Mamba exploits the convolutional formulation and leverages GPU memory hierarchy. Additionally, during inference, Mamba operates in constant memory due to recurrence, avoiding memory growth associated with Attention. This results in a 14x speed improvement using 5x less GPU. Subjective listening tests (0 to 100 scale) show that the proposed model surpasses the AERO model. In the MUSDB dataset, degraded signals scored 38.22, while AERO and AEROMamba scored 60.03 and 66.74, respectively. For the PianoEval dataset, scores were 72.92 for degraded signals, 76.89 for AERO, and 84.41 for AEROMamba.
           </p>
         </div>
       </div>
@@ -157,128 +106,507 @@
 </section>
 <!-- End paper abstract -->
 
+<!-- Results Section -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Section &#8544;: Results</h2>
+        <div class="content has-text-justified">
+          <p>Results for the MUSDB18 and PianoEval datasets comparing ViSQOL, LSD, and subjective scores across different models, as well as performance metrics on two GPU types (NVIDIA RTX 3090 and RTX 2080 Ti).</p>
+          <div class="columns">
+            
+            <!-- MUSDB18 Results Table -->
+            <div class="column is-half">
+              <h3 class="title is-4">MUSDB18 Results</h3>
+              <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>ViSQOL &#8593;</th>
+                    <th>LSD &#8595;</th>
+                    <th>Score &#8593;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Low-Resolution</td><td>1.82</td><td>3.98</td><td>38.22</td></tr>
+                  <tr><td>AERO</td><td>2.90</td><td>1.34</td><td>60.03</td></tr>
+                  <tr><td><b>AEROMamba</b></td><td><b>2.93</b></td><td><b>1.23</b></td><td><b>66.47</b></td></tr>
+                </tbody>
+              </table>
+              <p>Comparison of ViSQOL, LSD, and subjective scores for various models on the MUSDB18 dataset.</p>
+            </div>
+            
+            <!-- PianoEval Results Table -->
+            <div class="column is-half">
+              <h3 class="title is-4">PianoEval Results</h3>
+              <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>ViSQOL &#8593;</th>
+                    <th>LSD &#8595;</th>
+                    <th>Score &#8593;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Low-Resolution</td><td>4.36</td><td>1.09</td><td>72.92</td></tr>
+                  <tr><td>AERO</td><td><b>4.38</b></td><td><b>0.99</b></td><td>76.89</td></tr>
+                  <tr><td><b>AEROMamba-HQ</b></td><td><b>4.38</b></td><td>1.00</td><td><b>84.41</b></td></tr>
+                </tbody>
+              </table>
+              <p>Comparison of ViSQOL, LSD, and subjective scores for various models on the PianoEval dataset. Models labeled with `-HQ` were trained on PianoEval-HQ.</p>
+            </div>
+          </div>
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+          <!-- Performance Table -->
+          <h3 class="title is-4">Performance Comparison</h3>
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th colspan="2">NVIDIA RTX 3090</th>
+                <th colspan="2">NVIDIA RTX 2080 Ti</th>
+                <th>Parameters</th>
+              </tr>
+              <tr>
+                <th></th>
+                <th>GPU Usage (MB)</th>
+                <th>Time (s)</th>
+                <th>GPU Usage (MB)</th>
+                <th>Time (s)</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>AERO</td><td>17091</td><td>1.246</td><td>16420*</td><td>--</td><td>19,432,958</td></tr>
+              <tr><td>AEROMamba</td><td>3000</td><td>0.087</td><td>1914</td><td>0.063</td><td>20,964,190</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
+<!-- End Results Section -->
 
 
 
+<!-- Audio players -->
+  <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Section &#8545;: Examples for MUSDB tracks upsampled from 11.025kHz to 44.1kHz.</h2>
+          <div class="content">
+            <div class="columns is-centered has-text-centered">
+              <table>
+                <thead>
+                <tr>
+                  <th align="middle"></th>
+                  <th align="middle">Original low resolution <br> 11.025 kHz</th>
+                  <th align="middle">Original high resolution <br> 44.1 kHz</th>
+                  <th align="middle">AERO <br> 11.025 -> 44.1 kHz</th></th>
+                  <th align="middle">AEROMamba <br> 11.025 -> 44.1 kHz</th></th>
+                </tr>
+                </thead>
+    
+                <tbody>
+                <tr>
+                  <td align="middle"></td>
+                  <td>
+                    <audio controls style="width: 250px; height: 50px">
+                      <source src="static/audios/musdb/lr/deg459.wav" type="audio/wav">
+                    </audio>
+                  </td>
+                  <td>
+                    <audio controls style="width: 250px; height: 50px">
+                      <source src="static/audios/musdb/hr/ref459.wav" type="audio/wav">
+                    </audio>
+                  </td>
+                  <td>
+                    <audio controls style="width: 250px; height: 50px">
+                      <source src="static/audios/musdb/aero/deg459.wav" type="audio/wav">
+                    </audio>
+                  </td>
+                  <td>
+                    <audio controls style="width: 250px; height: 50px">
+                      <source src="static/audios/musdb/aeromamba/deg459.wav" type="audio/wav">
+                    </audio>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="columns is-centered has-text-centered">
+              <table>
+    
+                <tbody>
+                <tr>
+                  <td align="middle"></td>
+                  <td>
+                    <audio controls style="width: 250px; height: 50px">
+                      <source src="static/audios/musdb/lr/deg480.wav" type="audio/wav">
+                    </audio>
+                  </td>
+                  <td>
+                    <audio controls style="width: 250px; height: 50px">
+                      <source src="static/audios/musdb/hr/ref480.wav" type="audio/wav">
+                    </audio>
+                  </td>
+                  <td>
+                    <audio controls style="width: 250px; height: 50px">
+                      <source src="static/audios/musdb/aero/deg480.wav" type="audio/wav">
+                    </audio>
+                  </td>
+                  <td>
+                    <audio controls style="width: 250px; height: 50px">
+                      <source src="static/audios/musdb/aeromamba/deg480.wav" type="audio/wav">
+                    </audio>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
 
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="columns is-centered has-text-centered">
+              <table>
+    
+                <tbody>
+                <tr>
+                  <td align="middle"></td>
+                  <td>
+                    <audio controls style="width: 250px; height: 50px">
+                      <source src="static/audios/musdb/lr/deg826.wav" type="audio/wav">
+                    </audio>
+                  </td>
+                  <td>
+                    <audio controls style="width: 250px; height: 50px">
+                      <source src="static/audios/musdb/hr/ref826.wav" type="audio/wav">
+                    </audio>
+                  </td>
+                  <td>
+                    <audio controls style="width: 250px; height: 50px">
+                      <source src="static/audios/musdb/aero/deg826.wav" type="audio/wav">
+                    </audio>
+                  </td>
+                  <td>
+                    <audio controls style="width: 250px; height: 50px">
+                      <source src="static/audios/musdb/aeromamba/deg826.wav" type="audio/wav">
+                    </audio>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="columns is-centered has-text-centered">
+              <table>
+    
+                <tbody>
+                <tr>
+                  <td align="middle"></td>
+                  <td>
+                    <audio controls style="width: 250px; height: 50px">
+                      <source src="static/audios/musdb/lr/deg625.wav" type="audio/wav">
+                    </audio>
+                  </td>
+                  <td>
+                    <audio controls style="width: 250px; height: 50px">
+                      <source src="static/audios/musdb/hr/ref625.wav" type="audio/wav">
+                    </audio>
+                  </td>
+                  <td>
+                    <audio controls style="width: 250px; height: 50px">
+                      <source src="static/audios/musdb/aero/deg625.wav" type="audio/wav">
+                    </audio>
+                  </td>
+                  <td>
+                    <audio controls style="width: 250px; height: 50px">
+                      <source src="static/audios/musdb/aeromamba/deg625.wav" type="audio/wav">
+                    </audio>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
+<!-- End audio players -->
 
-
-<!-- Video carousel -->
-<section class="hero is-small">
+<!-- Audio players -->
+<section class="hero">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
+      <h2 class="title is-3">Section &#8545;: Examples for PianoEval tracks upsampled from 11.025kHz to 44.1kHz.</h2>
+        <div class="content">
+          <div class="columns is-centered has-text-centered">
+            <table>
+              <thead>
+              <tr>
+                <th align="middle"></th>
+                <th align="middle">Original low resolution <br> 11.025 kHz</th>
+                <th align="middle">Original high resolution <br> 44.1 kHz</th>
+                <th align="middle">AERO <br> 11.025 -> 44.1 kHz</th></th>
+                <th align="middle">AEROMamba <br> 11.025 -> 44.1 kHz</th></th>
+              </tr>
+              </thead>
+  
+              <tbody>
+              <tr>
+                <td align="middle"></td>
+                <td>
+                  <audio controls style="width: 250px; height: 50px">
+                    <source src="static/audios/piano/lr/deg70.wav" type="audio/wav">
+                  </audio>
+                </td>
+                <td>
+                  <audio controls style="width: 250px; height: 50px">
+                    <source src="static/audios/piano/hr/ref70.wav" type="audio/wav">
+                  </audio>
+                </td>
+                <td>
+                  <audio controls style="width: 250px; height: 50px">
+                    <source src="static/audios/piano/aero/deg70.wav" type="audio/wav">
+                  </audio>
+                </td>
+                <td>
+                  <audio controls style="width: 250px; height: 50px">
+                    <source src="static/audios/piano/aeromamba/deg70.wav" type="audio/wav">
+                  </audio>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="columns is-centered has-text-centered">
+            <table>
+  
+              <tbody>
+              <tr>
+                <td align="middle"></td>
+                <td>
+                  <audio controls style="width: 250px; height: 50px">
+                    <source src="static/audios/piano/lr/deg191.wav" type="audio/wav">
+                  </audio>
+                </td>
+                <td>
+                  <audio controls style="width: 250px; height: 50px">
+                    <source src="static/audios/piano/hr/ref191.wav" type="audio/wav">
+                  </audio>
+                </td>
+                <td>
+                  <audio controls style="width: 250px; height: 50px">
+                    <source src="static/audios/piano/aero/deg191.wav" type="audio/wav">
+                  </audio>
+                </td>
+                <td>
+                  <audio controls style="width: 250px; height: 50px">
+                    <source src="static/audios/piano/aeromamba/deg191.wav" type="audio/wav">
+                  </audio>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="columns is-centered has-text-centered">
+            <table>
+  
+              <tbody>
+              <tr>
+                <td align="middle"></td>
+                <td>
+                  <audio controls style="width: 250px; height: 50px">
+                    <source src="static/audios/piano/lr/deg669.wav" type="audio/wav">
+                  </audio>
+                </td>
+                <td>
+                  <audio controls style="width: 250px; height: 50px">
+                    <source src="static/audios/piano/hr/ref669.wav" type="audio/wav">
+                  </audio>
+                </td>
+                <td>
+                  <audio controls style="width: 250px; height: 50px">
+                    <source src="static/audios/piano/aero/deg669.wav" type="audio/wav">
+                  </audio>
+                </td>
+                <td>
+                  <audio controls style="width: 250px; height: 50px">
+                    <source src="static/audios/piano/aeromamba/deg669.wav" type="audio/wav">
+                  </audio>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="columns is-centered has-text-centered">
+            <table>
+  
+              <tbody>
+              <tr>
+                <td align="middle"></td>
+                <td>
+                  <audio controls style="width: 250px; height: 50px">
+                    <source src="static/audios/piano/lr/deg1233.wav" type="audio/wav">
+                  </audio>
+                </td>
+                <td>
+                  <audio controls style="width: 250px; height: 50px">
+                    <source src="static/audios/piano/hr/ref1233.wav" type="audio/wav">
+                  </audio>
+                </td>
+                <td>
+                  <audio controls style="width: 250px; height: 50px">
+                    <source src="static/audios/piano/aero/deg1233.wav" type="audio/wav">
+                  </audio>
+                </td>
+                <td>
+                  <audio controls style="width: 250px; height: 50px">
+                    <source src="static/audios/piano/aeromamba/deg1233.wav" type="audio/wav">
+                  </audio>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
         </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- End audio players -->
+
+<!-- PianoEval metadata -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Section &#8547;: PianoEval Metadata</h2>
+        <div class="content has-text-justified">
+          <p>We collected the PianoEval data set, which consists of two parts. The first is composed of the 24 Preludes for Piano, op. 28, by Chopin performed by 33 pianists in 45 different recordings available on CD (Compact Disc), totaling approximately 22 hours. The second part contains excerpts of Ligeti piano études, a Schumann sonata, and the Barber sonata, played by three different performers, respectively, totaling approximately 3.5 hours. Each file is stored in WAV format, stereo mode and sampled at 44.1 kHz. Information about performers, record label and year of recording are detailed in the Tables below.</p>
+          <div class="columns">
+            <!-- Train/Validation Table -->
+            <div class="columns">
+              <div class="column is-half">
+                <h3 class="title is-4">Train/Validation - Part 1</h3>
+                <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                  <thead>
+                    <tr>
+                      <th>Pianist</th>
+                      <th>Record label</th>
+                      <th>Year</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Arrau, C.</td><td>Columbia</td><td>1950/1</td></tr>
+                    <tr><td>Arrau, C.</td><td>Philips</td><td>1973</td></tr>
+                    <tr><td>Argerich, M.</td><td>Deutsche Grammophon</td><td>1975</td></tr>
+                    <tr><td>Ashkenazy, V.</td><td>Decca</td><td>1976</td></tr>
+                    <tr><td>Ashkenazy, V.</td><td>Decca</td><td>1992</td></tr>
+                    <tr><td>Bolet, J.</td><td>RCA</td><td>1974</td></tr>
+                    <tr><td>Blechacz, R.</td><td>Deutsche Grammophon</td><td>2007</td></tr>
+                    <tr><td>Cherkassky, S.</td><td>ASV</td><td>1968</td></tr>
+                    <tr><td>Cortot, A.</td><td>HMV</td><td>1926</td></tr>
+                    <tr><td>Cortot, A.</td><td>HMV</td><td>1933/4</td></tr>
+                    <tr><td>Cortot, A.</td><td>Gramophone</td><td>1942</td></tr>
+                    <tr><td>Cortot, A.</td><td>Archipel [live]</td><td>1955</td></tr>
+                    <tr><td>Cortot, A.</td><td>EMI</td><td>1957</td></tr>
+                    <tr><td>Davidovich, B.</td><td>Decca</td><td>1979</td></tr>
+                    <tr><td>de Larrocha, A.</td><td>Decca</td><td>1974</td></tr>
+                    <tr><td>Duchable, F.</td><td>Erato</td><td>1988</td></tr>
+                    <tr><td>Dutra, G.</td><td>Yellow Tail</td><td>1997</td></tr>
+                    <tr><td>El Bacha, A. R.</td><td>Forlane</td><td>1999</td></tr>
+                    <tr><td>François, S.</td><td>EMI</td><td>1959</td></tr>
+                    <tr><td>Freire, N.</td><td>Columbia</td><td>1970</td></tr>
+                    <tr><td>Harasiewicz, A.</td><td>Philips</td><td>1963</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            
+              <div class="column is-half">
+                <h3 class="title is-4">Train/Validation - Part 2</h3>
+                <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                  <thead>
+                    <tr>
+                      <th>Pianist</th>
+                      <th>Record label</th>
+                      <th>Year</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Katsaris, C.</td><td>Sony</td><td>1992</td></tr>
+                    <tr><td>Kissin, Y.</td><td>RCA</td><td>1999</td></tr>
+                    <tr><td>Lima, A. M.</td><td>Caras<sup>1</sup></td><td>1981</td></tr>
+                    <tr><td>Lucchesini, A.</td><td>EMI</td><td>1988<sup>2</sup></td></tr>
+                    <tr><td>Magaloff, N.</td><td>Philips</td><td>1975</td></tr>
+                    <tr><td>Novaes, G.</td><td>Music and Arts [live]</td><td>1949</td></tr>
+                    <tr><td>Ohlsson, G.</td><td>EMI</td><td>1974</td></tr>
+                    <tr><td>Ohlsson, G.</td><td>Hyperion</td><td>1989</td></tr>
+                    <tr><td>Perahia, M.</td><td>Columbia</td><td>1975</td></tr>
+                    <tr><td>Petri, E.</td><td>Columbia</td><td>1942</td></tr>
+                    <tr><td>Pires, M.</td><td>Erato</td><td>1975</td></tr>
+                    <tr><td>Pires, M.</td><td>Deutsche Grammophon</td><td>1992</td></tr>
+                    <tr><td>Pogorelich, I.</td><td>Deutsche Grammophon</td><td>1989</td></tr>
+                    <tr><td>Pollini, M.</td><td>Deutsche Grammophon</td><td>1974</td></tr>
+                    <tr><td>Pollini, M.</td><td>Deutsche Grammophon</td><td>2011</td></tr>
+                    <tr><td>Proença, M.</td><td>Delphos</td><td>1999</td></tr>
+                    <tr><td>Rubinstein, A.</td><td>RCA</td><td>1946</td></tr>
+                    <tr><td>Switala, W.</td><td>NIFC</td><td>2006/7</td></tr>
+                    <tr><td>Tiempo, S.</td><td>Victor</td><td>1990</td></tr>
+                    <tr><td>Varsi, D.</td><td>Genuin</td><td>1988</td></tr>
+                  </tbody>
+                </table>
+                <p>The superscript <sup>1</sup> refers to a magazine, and the superscript <sup>2</sup> refers to the release year, not the recording year.</p>
+              </div>
+            </div>
+            
+            <!-- Test Table -->
+            <div class="column is-half">
+              <h3 class="title is-4">Test</h3>
+              <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Pianist</th>
+                    <th>Record label</th>
+                    <th>Year</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>B. Glemser</td><td>Naxos</td><td>1993</td></tr>
+                  <tr><td>D. Pollack</td><td>Naxos</td><td>1995</td></tr>
+                  <tr><td>P. L. Aimard</td><td>Sony</td><td>1995</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
+<!-- End dataset metadata -->
 
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>@inproceedings{Abreu2024lamir,
+        author    = {Wallace Abreu and Luiz Wagner Pereira Biscainho},
+        title     = {AEROMamba: An Efficient Architecture for Audio Super-Resolution Using Generative Adversarial Networks and State Space Models},
+        booktitle = {Proceedings of the 1st Latin American Music Information Retrieval Workshop},
+        year      = {2024},
+        address   = {Rio de Janeiro, Brazil},
+      }
+      </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
